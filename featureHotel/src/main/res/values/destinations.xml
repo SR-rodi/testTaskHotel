@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="action_roomFragment_to_bookingFragment" type="id"/>
+    <item name="action_hotelFragment_to_roomFragment" type="id"/>
+
+</resources>
