@@ -9,7 +9,7 @@ class HotelDto(
     @SerializedName("image_urls") val image: List<String>,
     @SerializedName("minimal_price") val minimalPrice: Int,
     @SerializedName("name") val name: String,
-    @SerializedName("price_for_it") val price: String,
+    @SerializedName("price_for_it") val priceForIt: String,
     @SerializedName("rating") val rating: Int,
     @SerializedName("rating_name") val ratingName: String
 )

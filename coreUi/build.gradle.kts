@@ -4,8 +4,8 @@ plugins {
 }
 
 android {
-    namespace = "ru.sr.featurehotel"
-    compileSdk = 34
+    namespace = "ru.sr.coreui"
+    compileSdk = 33
 
     defaultConfig {
         minSdk = 26
@@ -38,19 +38,10 @@ android {
 dependencies {
 
     implementation(project(":core"))
-    implementation(project(":coreUi"))
-    implementation(project(":storage"))
-    implementation(project(":delegate"))
-
-
-    implementation ("io.insert-koin:koin-android:3.4.3")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

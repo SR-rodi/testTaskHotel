@@ -4,6 +4,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.BaseViewModel
 import ru.sr.featurehotel.domen.useCase.GetHotelUseCase
+import ru.sr.featurehotel.presentation.model.DescriptionHotel
 import ru.sr.featurehotel.presentation.model.Hotel
 import ru.sr.featurehotel.presentation.state.HotelState
 
@@ -20,7 +21,11 @@ internal class HotelViewModel(
             updateState(HotelState.Loading)
             getHotelUseCase.invoke()
                 .onSuccess { hotelDM ->
-                    updateState(viewState.copy(hotel = Hotel.fromDomain(hotelDM)))
+                    val items =
+                        listOf(Hotel.fromDomain(hotelDM), DescriptionHotel.fromDomain(hotelDM))
+                    updateState(
+                        viewState.copy(items = items)
+                    )
                 }
                 .onFailure {
                     updateState(HotelState.Error)

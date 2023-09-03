@@ -3,6 +3,8 @@ package ru.sr.featurehotel.presentation.hotel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.BaseFragment
 import ru.sr.featurehotel.databinding.FragmentHotelBinding
@@ -22,14 +24,14 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>() {
         flowObserver(viewModel.viewState()) { state ->
             observeViewState(state as HotelState)
         }
-
     }
 
+    @Suppress("UNCHECKED_CAST")
     private fun observeViewState(state: HotelState) {
         when (state) {
             is HotelState.Content -> {
-                binding.ViewPager.adapter = PagerAdapter().apply {
-                    setItems(state.hotel.images)
+                binding.hotelRecyclerView.adapter = HotelAdapter().apply {
+                    submitList(state.items)
                 }
             }
 
@@ -37,5 +39,4 @@ class HotelFragment : BaseFragment<FragmentHotelBinding>() {
             HotelState.Loading -> {}
         }
     }
-
 }

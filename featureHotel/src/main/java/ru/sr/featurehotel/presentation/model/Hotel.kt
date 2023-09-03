@@ -4,33 +4,44 @@ import ru.sr.featurehotel.domen.model.HotelDM
 
 class Hotel(
     val id: Int = -1,
-    val description: String = "",
-    val peculiarities: List<String> = emptyList(),
     val address: String = "",
     val images: List<String> = emptyList(),
     val minPrice: Int = -1,
     val name: String = "",
-    val price: String = "",
+    val priceForIt: String = "",
     val rating: Int = -1,
     val ratingName: String = ""
-) {
+):HotelInfo {
 
-    companion object{
+    companion object {
         fun fromDomain(domainModel: HotelDM): Hotel {
-           return Hotel(
+            return Hotel(
                 id = domainModel.id,
-                description = domainModel.description,
-                peculiarities = domainModel.peculiarities,
                 address = domainModel.address,
                 images = domainModel.images,
                 minPrice = domainModel.minPrice,
                 name = domainModel.name,
-                price = domainModel.price,
+                priceForIt = domainModel.priceForIt,
                 rating = domainModel.rating,
                 ratingName = domainModel.ratingName
             )
         }
     }
-
-
 }
+
+class DescriptionHotel(
+    val description: String = "",
+    val peculiarities: List<String> = emptyList(),
+):HotelInfo {
+
+    companion object {
+        fun fromDomain(domainModel: HotelDM): DescriptionHotel {
+            return DescriptionHotel(
+                description = domainModel.description,
+                peculiarities = domainModel.peculiarities
+            )
+        }
+    }
+}
+
+interface HotelInfo

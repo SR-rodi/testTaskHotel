@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
@@ -6,5 +7,9 @@
     <color name="black_overlay">#66000000</color>
     <color name="black">#000000</color>
     <color name="orange"> #FFA800</color>
+    <color name="orange_bg">#33FFC700</color>
     <color name="blue"> #0D72FF</color>
+    <color name="white_ui">#FFFFFF</color>
+    <color name="black_overlay_22">#38000000</color>
+    <color name="subtitle">#828796</color>
 </resources>

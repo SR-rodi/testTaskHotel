@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_title_main"
+    android:elevation="1dp"
+    android:orientation="vertical"
+    tools:context=".presentation.hotel.HotelFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:text="Отель"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
+    <ru.sr.coreui.ViewPagerDots
+        android:id="@+id/ViewPager"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="250dp"/>
+
+
+    <ru.sr.coreui.RatingLabel
+        android:id="@+id/ratingName"
+        android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/hotelName"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        android:layout_marginBottom="8dp"
+        tools:text = "Превосходно"
+        />
+
+    <TextView
+        android:id="@+id/tags"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        tools:text = "Превосходно"
+        />
+
+    <ru.sr.coreui.PriceView
+        android:id="@+id/price"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -16,7 +16,7 @@ internal fun HotelDto.toDomain(): HotelDM {
         images = this.image,
         minPrice = this.minimalPrice,
         name = this.name,
-        price = this.price,
+        priceForIt = this.priceForIt,
         rating = this.rating,
         ratingName = this.ratingName
     )

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="1dp"
+    android:orientation="vertical"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_title_description"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:layout_margin="16dp"
+        android:text="Об отеле"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:spanCount="2"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>
