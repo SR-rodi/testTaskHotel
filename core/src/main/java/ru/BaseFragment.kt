@@ -1,22 +1,14 @@
 package ru
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
-import androidx.viewbinding.ViewBindings
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
-import ru.sr.core.databinding.FragmentBaseBinding
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
 
 abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
 
@@ -30,8 +22,16 @@ abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return initBinding(inflater).root
+        _binding = initBinding(inflater)
+        return binding.root
     }
+
+    protected fun <I : Any?> flowObserver(flow: Flow<I>?, action: suspend (it: I) -> Unit) =
+        viewLifecycleOwner.lifecycleScope.launch {
+            flow?.collect {
+                action(it)
+            }
+        }
 
     override fun onDestroy() {
         _binding = null
@@ -39,20 +39,3 @@ abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
     }
 }
 
-abstract class BaseViewModel<State : ViewState, ContentState : ContentViewState>(initViewState: Pair<ViewState, ContentState>) :
-    ViewModel() {
-
-    private val _viewState = MutableStateFlow(initViewState.first)
-    var viewState: ContentState = initViewState.second
-        private set
-
-    fun updateState(newState: ViewState) {
-        if (newState is ContentViewState) viewState = newState as ContentState
-        _viewState.value = newState
-
-    }
-
-}
-
-interface ViewState
-interface ContentViewState : ViewState

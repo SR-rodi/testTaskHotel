@@ -1,13 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".presentation.hotel.HotelFragment">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:text="Отель"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic" />
 
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="15dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/ViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/ratingName"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orange"
+        tools:text = "Превосходно"
+        />
+
+    <TextView
+        android:id="@+id/hotelName"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        android:layout_marginBottom="8dp"
+        tools:text = "Превосходно"
+        />
+
+    <TextView
+        android:id="@+id/tags"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        tools:text = "Превосходно"
+        />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:text = "Превосходно"
+        />
+
+</LinearLayout>
