@@ -2,6 +2,7 @@ package ru.sr.testtaskhotel
 
 import android.app.Application
 import org.koin.core.context.startKoin
+import ru.sr.featurehotel.di.featureHotelModule
 import ru.sr.storage.di.apiModule
 
 class App : Application() {
@@ -12,6 +13,7 @@ class App : Application() {
         startKoin {
             modules(
                 apiModule()
+                        + featureHotelModule()
             )
         }
     }

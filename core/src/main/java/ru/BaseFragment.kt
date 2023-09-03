@@ -10,8 +10,12 @@ import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 import androidx.viewbinding.ViewBindings
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import ru.sr.core.databinding.FragmentBaseBinding
 
 abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
@@ -34,3 +38,21 @@ abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
         super.onDestroy()
     }
 }
+
+abstract class BaseViewModel<State : ViewState, ContentState : ContentViewState>(initViewState: Pair<ViewState, ContentState>) :
+    ViewModel() {
+
+    private val _viewState = MutableStateFlow(initViewState.first)
+    var viewState: ContentState = initViewState.second
+        private set
+
+    fun updateState(newState: ViewState) {
+        if (newState is ContentViewState) viewState = newState as ContentState
+        _viewState.value = newState
+
+    }
+
+}
+
+interface ViewState
+interface ContentViewState : ViewState

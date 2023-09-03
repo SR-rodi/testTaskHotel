@@ -38,6 +38,8 @@ android {
 dependencies {
 
     implementation(project(":core"))
+    implementation(project(":storage"))
+
 
     implementation ("io.insert-koin:koin-android:3.4.3")
 

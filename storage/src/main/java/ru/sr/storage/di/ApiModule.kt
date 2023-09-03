@@ -4,7 +4,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
-import ru.sr.storage.remote.Api
+import ru.sr.storage.remote.HotelApi
 
 fun apiModule() = listOf(retrofitModule())
 
@@ -17,5 +17,5 @@ internal fun retrofitModule() = module {
             .build()
     }
 
-    single<Api> { get<Retrofit>().create() }
+    single<HotelApi> { get<Retrofit>().create() }
 }
