@@ -10,4 +10,17 @@
 
     </declare-styleable>
 
+    <declare-styleable name="ToolBar">
+
+        <attr name="toolBar_title" format="string" />
+
+    </declare-styleable>
+
+    <declare-styleable name="TextCell">
+
+        <attr name="text_cell_title" format="string" />
+        <attr name="text_cell_subtitle" format="string" />
+
+    </declare-styleable>
+
 </resources>

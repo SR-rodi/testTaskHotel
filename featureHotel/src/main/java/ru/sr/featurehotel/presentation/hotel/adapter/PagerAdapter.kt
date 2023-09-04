@@ -1,4 +1,4 @@
-package ru.sr.featurehotel.presentation.hotel
+package ru.sr.featurehotel.presentation.hotel.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

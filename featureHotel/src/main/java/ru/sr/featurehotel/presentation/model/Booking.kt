@@ -6,8 +6,6 @@ class Booking(
     val country: String = "",
     val departure: String = "",
     val fuelCharge: Int = -1,
-    val horating: Int = -1,
-    val hotelAddress: String = "",
     val hotelName: String = "",
     val id: Int = -1,
     val numberOfNights: Int = -1,
@@ -18,7 +16,7 @@ class Booking(
     val tourDateStart: String = "",
     val tourDateStop: String = "",
     val tourPrice: Int = -1
-) {
+) : HotelInfo {
 
     companion object {
         fun fromDomain(domainModel: BookingDM): Booking {
@@ -26,8 +24,6 @@ class Booking(
                 country = domainModel.country,
                 departure = domainModel.departure,
                 fuelCharge = domainModel.fuelCharge,
-                horating = domainModel.horating,
-                hotelAddress = domainModel.hotelAddress,
                 hotelName = domainModel.hotelName,
                 id = domainModel.id,
                 numberOfNights = domainModel.numberOfNights,
@@ -42,3 +38,4 @@ class Booking(
         }
     }
 }
+

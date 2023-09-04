@@ -19,15 +19,14 @@
         android:textSize="22sp"
         android:textStyle="italic" />
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tags"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
         android:layout_marginHorizontal="16dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:spanCount="2" />
+        app:chipSpacingVertical="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.chip.ChipGroup>
 
 
     <TextView

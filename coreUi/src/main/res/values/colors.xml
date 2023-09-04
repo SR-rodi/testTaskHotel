@@ -9,7 +9,10 @@
     <color name="orange"> #FFA800</color>
     <color name="orange_bg">#33FFC700</color>
     <color name="blue"> #0D72FF</color>
+    <color name="blue_10">#1A0D72FF</color>
     <color name="white_ui">#FFFFFF</color>
     <color name="black_overlay_22">#38000000</color>
     <color name="subtitle">#828796</color>
+    <color name="grey_100">#F6F6F9</color>
+    <color name="chips_color">#FBFBFC</color>
 </resources>

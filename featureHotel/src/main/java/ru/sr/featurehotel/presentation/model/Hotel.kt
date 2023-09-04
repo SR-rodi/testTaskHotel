@@ -29,19 +29,3 @@ class Hotel(
     }
 }
 
-class DescriptionHotel(
-    val description: String = "",
-    val peculiarities: List<String> = emptyList(),
-):HotelInfo {
-
-    companion object {
-        fun fromDomain(domainModel: HotelDM): DescriptionHotel {
-            return DescriptionHotel(
-                description = domainModel.description,
-                peculiarities = domainModel.peculiarities
-            )
-        }
-    }
-}
-
-interface HotelInfo
