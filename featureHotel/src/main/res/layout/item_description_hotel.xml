@@ -1,41 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:elevation="1dp"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="12dp"
     android:background="@drawable/bg_title_description"
-    android:layout_height="wrap_content">
+    android:elevation="1dp"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="italic"
+        android:layout_margin="16dp"
+        android:text="Об отеле"
         android:textColor="@color/black"
         android:textSize="22sp"
-        android:layout_margin="16dp"
-        android:text="Об отеле"/>
+        android:textStyle="italic" />
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginHorizontal="16dp"
         android:id="@+id/tags"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:spanCount="2"
+        android:layout_marginHorizontal="16dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        />
+        app:spanCount="2" />
 
 
     <TextView
         android:id="@+id/description"
-        android:layout_marginHorizontal="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        tools:text="@tools:sample/lorem" />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FBFBFC"
+        android:background="@drawable/bg_title_description"
+        android:paddingTop="15dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="vertical">
+
+
+
+        <ru.sr.coreui.ButtonWidget
+            android:layout_width="match_parent"
+            app:button_widget_title = "Удобство"
+
+            android:layout_marginHorizontal="16dp"
+            app:button_widget_subtitle = "Самое не обходимое"
+            android:layout_height="wrap_content" />
+
+        <ru.sr.coreui.ButtonWidget
+            android:layout_width="match_parent"
+            android:paddingTop="10dp"
+            app:button_widget_title = "Что включено"
+            android:layout_marginHorizontal="16dp"
+            app:button_widget_subtitle = "Самое не обходимое"
+            android:layout_height="wrap_content" />
+
+        <ru.sr.coreui.ButtonWidget
+            android:layout_width="match_parent"
+            app:button_widget_title = "Что не включено"
+            android:layout_marginHorizontal="16dp"
+            android:paddingTop="10dp"
+            app:button_widget_subtitle = "Самое не обходимое"
+            app:button_widget_divider_visible="false"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 
 </LinearLayout>

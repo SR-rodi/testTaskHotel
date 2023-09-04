@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="12dp"
+            style="@style/Widget.App.Button"
             android:text="К выбору номера"
             />
 

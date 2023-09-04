@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ButtonWidget">
+
+        <attr name="button_widget_title" format="string" />
+        <attr name="button_widget_subtitle" format="string" />
+        <attr name="button_widget_icon" format="reference" />
+        <attr name="button_widget_divider_visible" format="boolean" />
+
+    </declare-styleable>
+
+</resources>
